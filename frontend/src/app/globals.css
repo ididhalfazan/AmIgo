@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/*
+  Palette derived from assets/signupcanvas.png — warm cream + terracotta +
+  olive/sage, brown line accents. This is the app's only theme — it does not
+  switch with the system's dark-mode preference, so the canvas illustration's
+  look stays consistent everywhere.
+*/
+:root {
+  --background: #f6ede0;
+  --foreground: #362a1e;
+
+  --color-primary: #c1703f;
+  --color-primary-foreground: #fbf3e9;
+
+  --color-secondary: #7c8a5c;
+  --color-secondary-foreground: #f6ede0;
+
+  --color-accent: #d8c7a6;
+  --color-accent-foreground: #362a1e;
+
+  --color-muted: #e7dac2;
+  --color-muted-foreground: #6b5b45;
+
+  --color-border: #d8c7a6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-secondary-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --color-muted: var(--color-muted);
+  --color-muted-foreground: var(--color-muted-foreground);
+  --color-border: var(--color-border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
