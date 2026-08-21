@@ -1,0 +1,2 @@
+-- Seed data for local development.
+-- Run manually (psql -f) or wire into a seed script once models exist.

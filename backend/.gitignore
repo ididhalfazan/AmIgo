@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environment
+.venv/
+
+# Environment variables
+.env
+
+# Testing / tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Locally uploaded media — placeholder for the real S3-compatible storage
+# from plan.md; not meant to be committed.
+media/
+
+# OS
+.DS_Store

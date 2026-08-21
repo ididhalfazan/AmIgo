@@ -1,0 +1,31 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
+/**
+ * Calls onIntersect() whenever the returned ref's element scrolls into view.
+ * Pass a sentinel <div ref={sentinelRef} /> at the end of a list.
+ */
+export function useInfiniteScroll(onIntersect: () => void, enabled: boolean) {
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!enabled) return;
+    const node = sentinelRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          onIntersect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [onIntersect, enabled]);
+
+  return sentinelRef;
+}
